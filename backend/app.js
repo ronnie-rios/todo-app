@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.send('hello friend')
 })
 
-app.use('/todo, todoController');
+app.use('/todo', todoController);
 
 app.listen(port, () => {
     console.log(`example app running on ${port}`)
