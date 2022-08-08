@@ -1,7 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <div>Navbar</div>
+    <div>
+      <nav>
+        <Link to='/'>home     </Link>
+        <Link to='/create'>     create a post</Link>
+      </nav>
+    </div>
   )
 }
