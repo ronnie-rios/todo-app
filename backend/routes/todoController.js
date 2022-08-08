@@ -20,25 +20,17 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    // const {id} = req.params.id 
-    ToDo.findById(req.params.id)
-    .then(todo => {
-        res.json(todo)
-    })
-    .catch(err => {
-        res.json(err)
-    })
+    const id = req.params.id 
+    ToDo.findById(id)
+    .then(todo => res.json(todo))
+    .catch(err => res.json(err))
 });
 
 router.put('/:id', (req, res) => {
     // const {id} = req.params.id 
     ToDo.findByIdAndUpdate({ _id: req.params.id}, req.body, {new: true })
-    .then(todo => {
-        res.json(todo)
-    })
-    .catch(err => {
-        res.json(err)
-    })
+    .then(todo => res.json(todo))
+    .catch(err => res.json(err))
 });
 
 router.delete('/:id', (req, res) => {
