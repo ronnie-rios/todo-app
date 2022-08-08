@@ -9,6 +9,7 @@ const todoController = require('./routes/todoController');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
 mongoose.connect('mongodb://localhost/tododb2');
 
 app.get('/', (req, res) => {
