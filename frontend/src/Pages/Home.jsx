@@ -1,7 +1,11 @@
 import React from 'react'
+import CreatePost from './CreatePost'
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div>
+        <CreatePost />
+        
+    </div>
   )
 }
