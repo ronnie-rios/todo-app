@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function Form() {
-    const [form, setForm] = useState(null);
+    const [form, setForm] = useState();
 
     function formHandler(e) {
         const name = e.target.name;
@@ -33,12 +33,12 @@ export default function Form() {
             <input 
                 type='text'
                 placeholder='enter the title'
-                value='title'
+                name='title'
             />
             <input 
                 type='text'
                 placeholder='enter the body'
-                value='body'
+                name='body'
             />
             <button type='submit'>submit!</button>
         </form>

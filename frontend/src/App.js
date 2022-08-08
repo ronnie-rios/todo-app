@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import SinglePost from './Pages/SinglePost';
+
 function App() {
   return (
     <Router>
