@@ -7,14 +7,12 @@ export default function SinglePost() {
   const [singleTodo, setSingleTodo] = useState([]);
   const [loading, setLoading] = useState(true)
   const id = useParams().id;
-  console.log(id);
   
   async function getData(id) {
     try {
         const response = await fetch(`http://localhost:9004/todo/${id}`)
         const data = await response.json();
         setSingleTodo(data)
-        console.log(singleTodo);
         setLoading(false)
     } catch (error) {
         console.log(error)
@@ -22,8 +20,8 @@ export default function SinglePost() {
   }
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData(id)
+  }, [id])
 
   if (loading) {
     return (
@@ -34,8 +32,8 @@ export default function SinglePost() {
   return (
     <div>
       <h3>post details</h3>
-      {/* <h4>{singleTodo.title}</h4>
-      <p>{singleTodo.body}</p> */}
+      <h4>{singleTodo.title}</h4>
+      <p>{singleTodo.name}</p>
     </div>
   )
   }
